@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "type": "shoes",
+    "name": "shoes_1",
+    "idMatches": []
+  },
+  {
+    "id": 2,
+    "name": "shoes_2",
+    "type": "shoes",
+    "idMatches": []
+  },
+  {
+    "id": 3,
+    "name": "shorts_1",
+    "type": "shorts",
+    "idMatches": []
+  },
+  {
+    "id": 4,
+    "name": "shorts_2",
+    "type": "shorts",
+    "idMatches": []
+  },
+  {
+    "id": 5,
+    "type": "shorts",
+    "idMatches": [],
+    "name": "shorts_3"
+  },
+  {
+    "id": 6,
+    "type": "shorts",
+    "idMatches": [],
+    "name": "shorts_4"
+  },
+  {
+    "id": 7,
+    "type": "shorts",
+    "idMatches": [],
+    "name": "skirt_1"
+  }
+]
