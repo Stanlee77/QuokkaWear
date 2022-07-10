@@ -1,55 +1,50 @@
 import { useState } from "react";
-import { View, SafeArea, SafeAreaView, FlatList } from "react-native";
+import { Image, View, SafeArea, SafeAreaView, FlatList } from "react-native";
 
-import { COLORS, NFTData } from "../constants";
-import { NFTCard, HomeHeader, FocusedStatusBar } from "../components";
+import { assets, COLORS, NFTData, SIZES } from "../constants";
+import { Card, HomeHeader, FocusedStatusBar, Menu } from "../components";
 
 const Home = () => {
   const [nftData, setNftData] = useState(NFTData);
 
-  const handleSearch = (value) => {
-    if (!value.length) return setNftData(NFTData);
+  // const handleSearch = (value) => {
+  //   if (!value.length) return setNftData(NFTData);
 
-    const filteredData = NFTData.filter((item) =>
-      item.name.toLowerCase().includes(value.toLowerCase())
-    );
+  //   const filteredData = NFTData.filter((item) =>
+  //     item.name.toLowerCase().includes(value.toLowerCase())
+  //   );
 
-    if (filteredData.length) {
-      setNftData(filteredData);
-    } else {
-      setNftData(NFTData);
-    }
-  };
+  //   if (filteredData.length) {
+  //     setNftData(filteredData);
+  //   } else {
+  //     setNftData(NFTData);
+  //   }
+  // };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        justifyContent: "space-between",
+      }}
+    >
       <FocusedStatusBar background={COLORS.primary} />
-
-      <View style={{ flex: 1 }}>
-        <View style={{ zIndex: 0 }}>
-          <FlatList
-            data={nftData}
-            renderItem={({ item }) => <NFTCard data={item} />}
-            keyExtractor={(item) => item.id}
-            showsVerticalScrollIndicator={false}
-            ListHeaderComponent={<HomeHeader onSearch={handleSearch} />}
-          ></FlatList>
-        </View>
-
-        <View
-          style={{
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            right: 0,
-            left: 0,
-            zIndex: -1,
-          }}
-        >
-          <View style={{ height: 300, backgroundColor: COLORS.primary }}></View>
-          <View style={{ flex: 1, backgroundColor: COLORS.white }}></View>
-        </View>
+      <View style={{ zIndex: 0, display: "flex" }}>
+        <Card
+          data={nftData}
+          title={"Porozmawiajmy o faktach..."}
+          subtitle={"jest twoją ulubioną bluzką"}
+          image={assets.womanshirt_2}
+        />
+        <Card
+          data={nftData}
+          title={"Czas na wiosenne porządki..."}
+          subtitle={"jest nieużywana. Może warto ją sprzedać?"}
+          image={assets.womanshirt_4}
+        />
       </View>
+
+      <Menu menuStyle={assets.menu_roof} />
     </SafeAreaView>
   );
 };

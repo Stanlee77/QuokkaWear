@@ -26,6 +26,14 @@ import womanshirt_2 from "../assets/images/womanshirt_2.jpg";
 import womanshirt_3 from "../assets/images/womanshirt_3.jpg";
 import womanshirt_4 from "../assets/images/womanshirt_4.jpg";
 
+import menu_roof from "../assets/icons/menu_roof.png";
+import menu_roof_rate from "../assets/icons/menu_roof_rate.png";
+import dislike from "../assets/icons/dislike.png";
+import like from "../assets/icons/like.png";
+import go_in from "../assets/icons/go_in.png";
+import lock from "../assets/icons/lock.png";
+import shuffle from "../assets/icons/shuffle.png";
+
 import person01 from "../assets/images/person01.png";
 import person02 from "../assets/images/person02.png";
 import person03 from "../assets/images/person03.png";
@@ -59,6 +67,14 @@ export default {
   womanshirt_2,
   womanshirt_3,
   womanshirt_4,
+
+  menu_roof,
+  menu_roof_rate,
+  dislike,
+  like,
+  go_in,
+  lock,
+  shuffle,
 
   person01,
   person02,
