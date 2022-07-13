@@ -1,20 +1,14 @@
-import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
 
 import Home from "./screens/Home";
-import Details from "./screens/Details";
+import Lock from "./screens/Lock";
+import Shuffle from "./screens/Shuffle";
+import Wardrobe from "./screens/Wardrobe";
 
-const theme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    background: "transparent",
-  },
-};
-
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   const [loaded] = useFonts({
@@ -28,7 +22,7 @@ const App = () => {
   if (!loaded) return null;
 
   return (
-    <NavigationContainer theme={theme}>
+    <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
@@ -36,7 +30,9 @@ const App = () => {
         initialRouteName="Home"
       >
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="Lock" component={Lock} />
+        <Stack.Screen name="Shuffle" component={Shuffle} />
+        <Stack.Screen name="Wardrobe" component={Wardrobe} />
       </Stack.Navigator>
     </NavigationContainer>
   );

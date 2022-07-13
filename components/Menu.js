@@ -1,13 +1,15 @@
+import * as React from "react";
 import { Image, View, Text, TouchableOpacity } from "react-native";
-import React from "react";
+
+import { MenuButton } from "./index";
 
 import { assets, SIZES } from "../constants";
 
-const Menu = ({ menuStyle }) => {
+const Menu = ({ handleLockPress, handleShufflePress, handleWardrobePress }) => {
   return (
     <View>
       <Image
-        source={menuStyle}
+        // source={menuStyle}
         style={{
           width: "100%",
           height: 29,
@@ -22,11 +24,7 @@ const Menu = ({ menuStyle }) => {
           paddingRight: SIZES.font,
         }}
       >
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate("Details");
-          }}
-        >
+        <TouchableOpacity onPress={handleLockPress}>
           <Image
             resizeMode="contain"
             style={{
@@ -36,20 +34,24 @@ const Menu = ({ menuStyle }) => {
             source={assets.lock}
           />
         </TouchableOpacity>
-        <Image
-          style={{
-            width: 60,
-            height: 60,
-          }}
-          source={assets.shuffle}
-        />
-        <Image
-          style={{
-            width: 60,
-            height: 60,
-          }}
-          source={assets.go_in}
-        />
+        <TouchableOpacity onPress={handleShufflePress}>
+          <Image
+            style={{
+              width: 60,
+              height: 60,
+            }}
+            source={assets.shuffle}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleWardrobePress}>
+          <Image
+            style={{
+              width: 60,
+              height: 60,
+            }}
+            source={assets.go_in}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );

@@ -7,6 +7,8 @@ import DetailsDesc from "./DetailsDesc";
 import DetailsBid from "./DetailsBid";
 import { SubInfo } from "./SubInfo";
 import Menu from "./Menu";
+import MenuButton from "./MenuButton";
+import MyButton from "./MyButton";
 
 export {
   HomeHeader,
@@ -18,4 +20,6 @@ export {
   DetailsDesc,
   SubInfo,
   Menu,
+  MenuButton,
+  MyButton,
 };

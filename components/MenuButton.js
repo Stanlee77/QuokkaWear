@@ -1,14 +1,9 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import React from "react";
+import * as React from "react";
 
-const MenuButton = ({ handlePress }) => {
-  return (
-    <View>
-      <TouchableOpacity onPress={handlePress}>
-        <Text>Click me to go in</Text>
-      </TouchableOpacity>
-    </View>
-  );
+import { Button } from "react-native";
+
+const MyButton = ({ handlePress }) => {
+  return <Button title="This is menuButton!Details!" onPress={handlePress} />;
 };
 
-export default MenuButton;
+export default MyButton;
