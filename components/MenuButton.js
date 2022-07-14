@@ -1,9 +1,25 @@
 import * as React from "react";
 
-import { Button } from "react-native";
+import { Image, View } from "react-native";
 
-const MyButton = ({ handlePress }) => {
-  return <Button title="This is menuButton!Details!" onPress={handlePress} />;
+const MenuButton = ({ focused, icon }) => {
+  return (
+    <View
+      style={{
+        top: 7,
+      }}
+    >
+      <Image
+        source={icon}
+        resizeMode="contain"
+        style={{
+          width: 30,
+          height: 30,
+          tintColor: focused ? "#7734D4" : "#260259",
+        }}
+      />
+    </View>
+  );
 };
 
-export default MyButton;
+export default MenuButton;

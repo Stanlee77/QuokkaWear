@@ -8,7 +8,6 @@ import DetailsBid from "./DetailsBid";
 import { SubInfo } from "./SubInfo";
 import Menu from "./Menu";
 import MenuButton from "./MenuButton";
-import MyButton from "./MyButton";
 
 export {
   HomeHeader,
@@ -21,5 +20,4 @@ export {
   SubInfo,
   Menu,
   MenuButton,
-  MyButton,
 };

@@ -5,14 +5,19 @@ import { MenuButton } from "./index";
 
 import { assets, SIZES } from "../constants";
 
-const Menu = ({ handleLockPress, handleShufflePress, handleWardrobePress }) => {
+const Menu = ({
+  menuStyle,
+  handleLockPress,
+  handleShufflePress,
+  handleWardrobePress,
+}) => {
   return (
     <View>
       <Image
-        // source={menuStyle}
+        source={menuStyle}
         style={{
           width: "100%",
-          height: 29,
+          height: 17.5,
         }}
       />
       <View
@@ -24,34 +29,21 @@ const Menu = ({ handleLockPress, handleShufflePress, handleWardrobePress }) => {
           paddingRight: SIZES.font,
         }}
       >
-        <TouchableOpacity onPress={handleLockPress}>
-          <Image
-            resizeMode="contain"
-            style={{
-              width: 60,
-              height: 60,
-            }}
-            source={assets.lock}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={handleShufflePress}>
-          <Image
-            style={{
-              width: 60,
-              height: 60,
-            }}
-            source={assets.shuffle}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={handleWardrobePress}>
-          <Image
-            style={{
-              width: 60,
-              height: 60,
-            }}
-            source={assets.go_in}
-          />
-        </TouchableOpacity>
+        <MenuButton
+          handlePress={handleLockPress}
+          icon={assets.lock}
+          iconActive={assets.lock_active}
+        />
+        <MenuButton
+          handlePress={handleShufflePress}
+          icon={assets.shuffle}
+          iconActive={assets.shuffle_active}
+        />
+        <MenuButton
+          handlePress={handleWardrobePress}
+          icon={assets.go_in}
+          iconActive={assets.go_in_active}
+        />
       </View>
     </View>
   );

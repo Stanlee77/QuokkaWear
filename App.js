@@ -1,14 +1,8 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import { useFonts } from "expo-font";
-
-import Home from "./screens/Home";
-import Lock from "./screens/Lock";
-import Shuffle from "./screens/Shuffle";
-import Wardrobe from "./screens/Wardrobe";
-
-const Stack = createNativeStackNavigator();
+import Tabs from "./components/Tabs";
 
 const App = () => {
   const [loaded] = useFonts({
@@ -23,17 +17,7 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-        initialRouteName="Home"
-      >
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Lock" component={Lock} />
-        <Stack.Screen name="Shuffle" component={Shuffle} />
-        <Stack.Screen name="Wardrobe" component={Wardrobe} />
-      </Stack.Navigator>
+      <Tabs />
     </NavigationContainer>
   );
 };

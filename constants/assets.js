@@ -33,6 +33,7 @@ import like from "../assets/icons/like.png";
 import go_in from "../assets/icons/go_in.png";
 import lock from "../assets/icons/lock.png";
 import shuffle from "../assets/icons/shuffle.png";
+import home from "../assets/icons/home.png";
 
 import person01 from "../assets/images/person01.png";
 import person02 from "../assets/images/person02.png";
@@ -75,6 +76,7 @@ export default {
   go_in,
   lock,
   shuffle,
+  home,
 
   person01,
   person02,

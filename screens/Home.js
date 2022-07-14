@@ -67,9 +67,9 @@
 
 import * as React from "react";
 import { useState } from "react";
-import { Button, SafeAreaView, Text, View, StatusBar } from "react-native";
+import { SafeAreaView, View, StatusBar } from "react-native";
 
-import { MenuButton, Card, HomeHeader, Menu } from "../components";
+import { Card, Menu } from "../components";
 
 import { assets, COLORS, NFTData, SIZES } from "../constants";
 
@@ -102,7 +102,7 @@ const Home = ({ navigation }) => {
           image={assets.womanshirt_4}
         />
       </View>
-      <Menu
+      {/* <Menu
         handleLockPress={() => {
           navigation.navigate("Lock");
         }}
@@ -113,7 +113,7 @@ const Home = ({ navigation }) => {
           navigation.navigate("Wardrobe");
         }}
         menuStyle={assets.menu_roof}
-      />
+      /> */}
     </SafeAreaView>
   );
 };
