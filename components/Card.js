@@ -1,74 +1,81 @@
-import { View, Text, Image } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { TouchableOpacity, View, Text, Image } from "react-native";
 
 import { COLORS, SIZES, SHADOWS, assets, FONTS } from "../constants";
 
-import { CircleButton, RectButton } from "./Button";
-import { SubInfo, EthPrice, NFTTitle } from "./SubInfo";
-import MenuButton from "./MenuButton";
-import { Colors } from "react-native/Libraries/NewAppScreen";
-import { TouchableOpacity } from "react-native-gesture-handler";
-
-const Card = ({ data, title, subtitle, image }) => {
-  const navigation = useNavigation();
+const Card = ({ title, subtitle, image, handlePress }) => {
   return (
     <View
       style={{
+        position: "relative",
         backgroundColor: COLORS.light,
         borderRadius: SIZES.font,
-        padding: SIZES.medium,
-        marginBottom: SIZES.large,
         margin: SIZES.medium,
+        padding: SIZES.large,
         ...SHADOWS.dark,
         height: 250,
       }}
     >
-      <Text
-        style={{
-          fontSize: SIZES.extraExtraLarge,
-          color: COLORS.primary,
-          fontFamily: FONTS.medium,
-          marginBottom: SIZES.large,
-        }}
+      <TouchableOpacity
+        style={{ width: "100%", height: "100%" }}
+        onPress={handlePress}
       >
-        {title}
-      </Text>
-      <View
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          gap: SIZES.large,
-        }}
-      >
+        <Text
+          style={{
+            fontSize: SIZES.extraExtraLarge,
+            color: COLORS.primary,
+            fontFamily: FONTS.medium,
+            marginBottom: SIZES.large,
+          }}
+        >
+          {title}
+        </Text>
         <View
           style={{
-            width: 80,
-            height: 80,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: SIZES.large,
           }}
         >
           <Image
             source={image}
             resizeMode="cover"
             style={{
-              width: "100%",
-              height: "100%",
+              width: 80,
+              height: 80,
               borderRadius: SIZES.font,
               borderWidth: 1,
               borderColor: COLORS.primary,
+              flex: 1,
             }}
           />
+          <Text
+            style={{
+              fontSize: SIZES.large,
+              color: COLORS.primary,
+              margin: SIZES.font,
+              flex: 3,
+            }}
+          >
+            {subtitle}
+          </Text>
         </View>
-        <Text
+        <View
           style={{
-            fontSize: SIZES.large,
-            color: COLORS.primary,
-            margin: SIZES.font,
+            position: "absolute",
+            right: 0,
+            bottom: 0,
           }}
         >
-          {subtitle}
-        </Text>
-      </View>
+          <Image
+            style={{
+              width: 35,
+              height: 35,
+            }}
+            source={assets.go_in}
+          />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };

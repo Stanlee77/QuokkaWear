@@ -69,12 +69,11 @@ import * as React from "react";
 import { useState } from "react";
 import { SafeAreaView, View, StatusBar } from "react-native";
 
-import { Card, Menu } from "../components";
+import { Card } from "../components";
 
-import { assets, COLORS, NFTData, SIZES } from "../constants";
+import { assets, COLORS, SIZES } from "../constants";
 
 const Home = ({ navigation }) => {
-  const [nftData, setNftData] = useState(NFTData);
   return (
     <SafeAreaView
       style={{
@@ -90,30 +89,17 @@ const Home = ({ navigation }) => {
       />
       <View style={{ zIndex: 0, display: "flex" }}>
         <Card
-          data={nftData}
           title={"Porozmawiajmy o faktach..."}
           subtitle={"jest twoją ulubioną bluzką"}
           image={assets.womanshirt_2}
+          handlePress={() => navigation.navigate("Statistics")}
         />
         <Card
-          data={nftData}
           title={"Czas na wiosenne porządki..."}
           subtitle={"jest nieużywana. Może warto ją sprzedać?"}
           image={assets.womanshirt_4}
         />
       </View>
-      {/* <Menu
-        handleLockPress={() => {
-          navigation.navigate("Lock");
-        }}
-        handleShufflePress={() => {
-          navigation.navigate("Shuffle");
-        }}
-        handleWardrobePress={() => {
-          navigation.navigate("Wardrobe");
-        }}
-        menuStyle={assets.menu_roof}
-      /> */}
     </SafeAreaView>
   );
 };

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { View, Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { Home, Lock, Shuffle, Wardrobe } from "../screens";
@@ -18,7 +17,6 @@ const Tabs = () => (
     screenOptions={{
       headerShown: false,
       tabBarStyle: {
-        postion: "absolute",
         left: "5%",
         right: "5%",
         width: "90%",
